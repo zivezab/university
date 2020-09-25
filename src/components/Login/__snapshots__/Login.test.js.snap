@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<Form
+  inline={false}
+>
+  <FormGroup
+    controlId="formBasicEmail"
+  >
+    <FormLabel
+      column={false}
+      srOnly={false}
+    >
+      Email address
+    </FormLabel>
+    <FormControl
+      placeholder="Enter email"
+      required={true}
+      type="email"
+    />
+    <FormText
+      className="text-muted"
+    />
+  </FormGroup>
+  <FormGroup
+    controlId="formBasicPassword"
+  >
+    <FormLabel
+      column={false}
+      srOnly={false}
+    >
+      Password
+    </FormLabel>
+    <FormControl
+      placeholder="Password"
+      required={true}
+      type="password"
+    />
+  </FormGroup>
+  <FormGroup
+    controlId="formBasicCheckbox"
+  >
+    <FormCheck
+      label="Remember Me"
+      type="checkbox"
+    />
+  </FormGroup>
+  <span
+    className="float-right"
+  >
+    <Button
+      active={false}
+      disabled={false}
+      type="submit"
+      variant="primary"
+    >
+      Login
+    </Button>
+     
+    <Button
+      active={false}
+      disabled={false}
+      type="submit"
+      variant="success"
+    >
+      Register
+    </Button>
+  </span>
+</Form>
+`;

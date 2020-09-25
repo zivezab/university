@@ -1,0 +1,13 @@
+.fav-btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #6568F4;
+}
+
+.fav-btn:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    color: #6568F4;
+    transition: 250ms;
+}

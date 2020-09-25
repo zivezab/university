@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
-import {
-  Card, CardColumns, OverlayTrigger, Tooltip,
-} from 'react-bootstrap';
+import {Card, CardColumns, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import Flag from 'react-world-flags';
 import FavoriteButton from '../FavoriteButton';
 
 class UniversityCards extends Component {
+  componentDidMount() {
+    const localFavorites = JSON.parse(localStorage.getItem('Favorites'));
+    if (localFavorites && Array.isArray(localFavorites)) {
+      this.props.restoreFavorite(localFavorites);
+    }
+  }
+
   render() {
     if (this.props.showError) {
       return <>Error, please try again.</>;
@@ -18,17 +23,18 @@ class UniversityCards extends Component {
     }
     const cards = this.props.universityList.map((data, index) => {
       if (data) {
-        const isFavorite = this.props.favoriteList.findIndex((x) => x.name === data.name) > -1;
+        const isFavorite =
+          this.props.favoriteList.findIndex((x) => x.name === data.name) > -1;
         return (
           <Card key={index}>
             <Card.Header>
               <OverlayTrigger
                 overlay={
-                  <Tooltip id="tooltip-disabled">{data.country}</Tooltip>
+                  <Tooltip id='tooltip-disabled'>{data.country}</Tooltip>
                 }
               >
-                <span className="d-inline-block">
-                  <Flag code={data.alpha_two_code} height="20px" />
+                <span className='d-inline-block'>
+                  <Flag code={data.alpha_two_code} height='20px' />
                 </span>
               </OverlayTrigger>
               <FavoriteButton
@@ -42,8 +48,8 @@ class UniversityCards extends Component {
               <Card.Text>
                 <a
                   href={data.web_pages}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   {data.web_pages}
                 </a>
@@ -63,6 +69,7 @@ class UniversityCards extends Component {
 }
 
 UniversityCards.defaultProps = {
+  restoreFavorite: () => {},
   addFavorite: () => {},
   removeFavorite: () => {},
   favoriteList: [],

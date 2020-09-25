@@ -11,15 +11,16 @@ class Navbar extends Component {
     };
   }
 
-  handleClick() {
-    this.setState({clicked: !this.state.clicked});
-  }
-
   render() {
     return (
       <nav className='NavbarItems'>
         <h1 className='navbar-logo'>{this.props.appName}</h1>
-        <div className='menu-icon' onClick={this.handleClick}>
+        <div
+          className='menu-icon'
+          onClick={() => {
+            this.setState({clicked: !this.state.clicked});
+          }}
+        >
           <i
             className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
           ></i>

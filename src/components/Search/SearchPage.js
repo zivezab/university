@@ -7,14 +7,16 @@ const UNIVERSITY_URL = 'http://universities.hipolabs.com/search';
 const SearchPage = (props) => {
   const [keyword, setKeyword] = useState('');
   const [country, setCountry] = useState('');
-  const [favoriteList, setFavoriteList] = useState();
-  const [universityList, setUniversityList] = useState();
+  const [favoriteList, setFavoriteList] = useState([]);
+  const [universityList, setUniversityList] = useState([]);
   const [showError, setShowError] = useState(false);
   const [disableInput, setDisableInput] = useState(false);
 
   const exportJSONFile = (data) => {
     const dataStr = JSON.stringify(universityList);
-    const dataUri = `data:application/json;charset=utf-8,${encodeURIComponent(dataStr)}`;
+    const dataUri = `data:application/json;charset=utf-8,${encodeURIComponent(
+      dataStr
+    )}`;
     const exportFileDefaultName = 'users.json';
 
     const linkElement = document.createElement('a');
@@ -29,10 +31,10 @@ const SearchPage = (props) => {
     try {
       const url = `${UNIVERSITY_URL}?country=${country}&name=${keyword}`;
       await fetch(url)
-          .then((response) => response.json())
-          .then((data) => {
-            setUniversityList(data);
-          });
+        .then((response) => response.json())
+        .then((data) => {
+          setUniversityList(data);
+        });
     } catch (error) {
       setShowError(true);
     }
@@ -49,13 +51,20 @@ const SearchPage = (props) => {
 
   const removeFavorite = async (favorite) => {
     const favList = Array.isArray(favoriteList) ? [...favoriteList] : [];
-    setFavoriteList(favList.filter((obj) => obj.name !== favorite.name));
+    const newFavList = favList.filter((x) => x.name !== favorite.name);
+    setFavoriteList(newFavList);
+    localStorage.setItem('Favorites', JSON.stringify(newFavList));
   };
 
   const addFavorite = async (favorite) => {
     const favList = Array.isArray(favoriteList) ? [...favoriteList] : [];
     favList.push(favorite);
     setFavoriteList(favList);
+    localStorage.setItem('Favorites', JSON.stringify(favList));
+  };
+
+  const restoreFavorite = async (favorites) => {
+    setFavoriteList(favorites);
   };
 
   return (
@@ -68,6 +77,7 @@ const SearchPage = (props) => {
         disabled={disableInput}
       />
       <UniversityCards
+        restoreFavorite={restoreFavorite}
         addFavorite={addFavorite}
         removeFavorite={removeFavorite}
         universityList={universityList}

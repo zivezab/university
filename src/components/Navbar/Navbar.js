@@ -1,25 +1,30 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { MenuItems } from "./MenuItems";
-import "./Navbar.css";
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {MenuItems} from './MenuItems';
+import './Navbar.css';
 
 class Navbar extends Component {
-  state = { clicked: false };
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+    };
+  }
 
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
-  };
+  handleClick() {
+    this.setState({clicked: !this.state.clicked});
+  }
 
   render() {
     return (
-      <nav className="NavbarItems">
-        <h1 className="navbar-logo">{this.props.appName}</h1>
-        <div className="menu-icon" onClick={this.handleClick}>
+      <nav className='NavbarItems'>
+        <h1 className='navbar-logo'>{this.props.appName}</h1>
+        <div className='menu-icon' onClick={this.handleClick}>
           <i
-            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+            className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
           ></i>
         </div>
-        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>

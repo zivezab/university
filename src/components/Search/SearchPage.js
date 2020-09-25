@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import SearchInput from "./SearchInput";
-import UniversityCards from "./UniversityCards";
+import React, {useState} from 'react';
+import SearchInput from './SearchInput';
+import UniversityCards from './UniversityCards';
+
+const UNIVERSITY_URL = 'http://universities.hipolabs.com/search';
 
 const SearchPage = (props) => {
-  const [keyword, setKeyword] = useState("");
-  const [country, setCountry] = useState("");
+  const [keyword, setKeyword] = useState('');
+  const [country, setCountry] = useState('');
   const [favoriteList, setFavoriteList] = useState();
   const [universityList, setUniversityList] = useState();
   const [showError, setShowError] = useState(false);
   const [disableInput, setDisableInput] = useState(false);
 
   const exportJSONFile = (data) => {
-    let dataStr = JSON.stringify(universityList);
-    let dataUri =
-      "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
-    let exportFileDefaultName = "users.json";
+    const dataStr = JSON.stringify(universityList);
+    const dataUri = `data:application/json;charset=utf-8,${encodeURIComponent(dataStr)}`;
+    const exportFileDefaultName = 'users.json';
 
-    let linkElement = document.createElement("a");
-    linkElement.setAttribute("href", dataUri);
-    linkElement.setAttribute("download", exportFileDefaultName);
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
   };
 
@@ -26,16 +27,12 @@ const SearchPage = (props) => {
     e.preventDefault();
     setDisableInput(true);
     try {
-      let url =
-        "http://universities.hipolabs.com/search?country=" +
-        country +
-        "&name=" +
-        keyword;
+      const url = `${UNIVERSITY_URL}?country=${country}&name=${keyword}`;
       await fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          setUniversityList(data);
-        });
+          .then((response) => response.json())
+          .then((data) => {
+            setUniversityList(data);
+          });
     } catch (error) {
       setShowError(true);
     }

@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
-import countryList from "./countries";
+import React, {Component} from 'react';
+import {Form, Button, Spinner} from 'react-bootstrap';
+import countryList from './countries';
 
 class SearchInput extends Component {
   renderOld() {
     const BarStyling = {
-      width: "20rem",
-      background: "#F2F1F9",
-      border: "none",
-      padding: "0.5rem",
+      width: '20rem',
+      background: '#F2F1F9',
+      border: 'none',
+      padding: '0.5rem',
     };
 
     return (
@@ -16,7 +16,7 @@ class SearchInput extends Component {
         style={BarStyling}
         key="search"
         value={this.props.keyword}
-        placeholder={"Search University"}
+        placeholder="Search University"
         onChange={(e) => this.props.onKeywordChange(e.target.value)}
       />
     );
@@ -49,13 +49,11 @@ class SearchInput extends Component {
             custom
           >
             <option value="">Any</option>
-            {countryList.map((item, index) => {
-              return (
-                <option key={index} value={item.name}>
-                  {item.name}
-                </option>
-              );
-            })}
+            {countryList.map((item, index) => (
+              <option key={index} value={item.name}>
+                {item.name}
+              </option>
+            ))}
           </Form.Control>
           <div className="float-right">
             <Button type="submit" className="my-1">
@@ -68,9 +66,10 @@ class SearchInput extends Component {
                   aria-hidden="true"
                 />
               ) : (
-                "Submit"
+                'Submit'
               )}
-            </Button>{" "}
+            </Button>
+            {' '}
             <Button variant="success" onClick={this.props.exportData}>
               Newsletter
             </Button>

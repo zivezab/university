@@ -1,10 +1,10 @@
-import { shallow } from "enzyme";
-import toJSON from "enzyme-to-json";
-import React from "react";
+import {shallow} from 'enzyme';
+import toJSON from 'enzyme-to-json';
+import React from 'react';
 
-import SearchInput from "./SearchInput";
+import SearchInput from './SearchInput';
 
-test("matches snapshot", () => {
+test('matches snapshot', () => {
   const wrapper = shallow(<SearchInput />);
 
   expect(toJSON(wrapper)).toMatchSnapshot();

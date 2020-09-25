@@ -1,11 +1,11 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
-import SearchPage from "./components/Search/SearchPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import SearchPage from './components/Search/SearchPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   return (

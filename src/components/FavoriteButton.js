@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
-import "./FavoriteButton.css";
+import React, {Component} from 'react';
+import {VscStarEmpty, VscStarFull} from 'react-icons/vsc';
+import './FavoriteButton.css';
 
 class FavoriteButton extends Component {
   render() {

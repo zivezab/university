@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { Card, CardColumns, OverlayTrigger, Tooltip } from "react-bootstrap";
-import Flag from "react-world-flags";
-import FavoriteButton from "../FavoriteButton";
+import React, {Component} from 'react';
+import {
+  Card, CardColumns, OverlayTrigger, Tooltip,
+} from 'react-bootstrap';
+import Flag from 'react-world-flags';
+import FavoriteButton from '../FavoriteButton';
 
 class UniversityCards extends Component {
   render() {
@@ -14,10 +16,9 @@ class UniversityCards extends Component {
     ) {
       return <>No result.</>;
     }
-    let cards = this.props.universityList.map((data, index) => {
+    const cards = this.props.universityList.map((data, index) => {
       if (data) {
-        let isFavorite =
-          this.props.favoriteList.findIndex((x) => x.name === data.name) > -1;
+        const isFavorite = this.props.favoriteList.findIndex((x) => x.name === data.name) > -1;
         return (
           <Card key={index}>
             <Card.Header>

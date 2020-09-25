@@ -2,7 +2,8 @@
 
 exports[`matches snapshot 1`] = `
 <h2>
-  Hello, please proceed to 
+  Hello, please proceed to
+   
   <a
     href="/search"
   >

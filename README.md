@@ -8,6 +8,10 @@ _Login and Register didn't complete_
 
 To see the webpage
 
+### `eslint src/**/*.js --fix`
+
+To lint js files before commit
+
 ### `npm run test -- --coverage --watchAll=false`
 
 To see the test coverage
@@ -39,10 +43,6 @@ All files                |    44.44 |       50 |    33.33 |    45.45 |          
   countries.js           |      100 |      100 |      100 |      100 |                   |
 -------------------------|----------|----------|----------|----------|-------------------|
 ```
-
-### `eslint src/**/*.js --fix`
-
-To lint js files before commit
 
 ## Available Scripts
 

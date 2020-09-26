@@ -4,22 +4,26 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import SearchPage from './components/Search/SearchPage';
+import Favorite from './components/Favorite/Favorite';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
-        <Navbar appName="Universities" />
+        <Navbar appName='Universities' />
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Home />
           </Route>
-          <Route path="/search">
+          <Route path='/search'>
             <SearchPage />
           </Route>
-          <Route path="/login">
+          <Route path='/favorite'>
+            <Favorite />
+          </Route>
+          <Route path='/login'>
             <Login />
           </Route>
         </Switch>

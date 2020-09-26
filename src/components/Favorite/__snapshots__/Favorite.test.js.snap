@@ -2,14 +2,8 @@
 
 exports[`matches snapshot 1`] = `
 <Fragment>
-  <SearchInput
-    disabled={false}
-    exportData={[Function]}
-    onCountryChange={[Function]}
-    onKeywordChange={[Function]}
-    onSubmit={[Function]}
-  />
   <UniversityCards
+    favoriteList={Array []}
     showError={false}
     universityList={Array []}
   />

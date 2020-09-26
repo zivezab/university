@@ -10,6 +10,11 @@ export const MenuItems = [
     className: 'nav-links',
   },
   {
+    title: 'Favorite',
+    url: '/favorite',
+    className: 'nav-links',
+  },
+  {
     title: 'Login / Register',
     url: '/login',
     className: 'nav-links',

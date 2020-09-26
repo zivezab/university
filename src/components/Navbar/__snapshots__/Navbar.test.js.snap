@@ -43,6 +43,16 @@ exports[`matches snapshot 1`] = `
     >
       <Link
         className="nav-links"
+        to="/favorite"
+      >
+        Favorite
+      </Link>
+    </li>
+    <li
+      key="3"
+    >
+      <Link
+        className="nav-links"
         to="/login"
       >
         Login / Register

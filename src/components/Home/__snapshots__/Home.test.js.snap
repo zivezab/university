@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<h2>
-  Hello, please proceed to
-   
+<div
+  className="horizontal-center vertical-center"
+>
   <a
     href="/search"
   >
-    Search University
+    <FaUniversity
+      size="200"
+    />
   </a>
-</h2>
+</div>
 `;

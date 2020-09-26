@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
+import {FaUniversity} from 'react-icons/fa';
+import './Home.css';
 
 class Home extends Component {
   render() {
     return (
-      <h2>
-        Hello, please proceed to
-        {' '}
-        <a href="/search">Search University</a>
-      </h2>
+      <div className='horizontal-center vertical-center'>
+        <a href='/search'>
+          <FaUniversity size='200' />
+        </a>
+      </div>
     );
   }
 }

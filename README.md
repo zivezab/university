@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-*Login and Register didn't complete*
+_Login and Register didn't complete_
 
 ## Quick Start
 
@@ -13,28 +13,31 @@ To see the webpage
 To see the test coverage
 
 ```
------------------------|----------|----------|----------|----------|-------------------|
-File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
------------------------|----------|----------|----------|----------|-------------------|
-All files              |    43.24 |       40 |       25 |    44.44 |                   |
- src                   |        0 |      100 |        0 |        0 |                   |
-  App.js               |        0 |      100 |        0 |        0 |                11 |
-  index.js             |        0 |      100 |      100 |        0 |                 6 |
- src/components        |      100 |       50 |    33.33 |      100 |                   |
-  FavoriteButton.js    |      100 |       50 |    33.33 |      100 |                 7 |
- src/components/Home   |      100 |      100 |      100 |      100 |                   |
-  Home.js              |      100 |      100 |      100 |      100 |                   |
- src/components/Login  |      100 |      100 |      100 |      100 |                   |
-  Login.js             |      100 |      100 |      100 |      100 |                   |
- src/components/Navbar |    83.33 |       50 |    66.67 |    83.33 |                   |
-  MenuItems.js         |      100 |      100 |      100 |      100 |                   |
-  Navbar.js            |       80 |       50 |    66.67 |       80 |                10 |
- src/components/Search |     37.1 |    35.71 |    14.81 |    38.33 |                   |
-  SearchInput.js       |     37.5 |       50 |       20 |     37.5 |     7,14,20,35,48 |
-  SearchPage.js        |    38.46 |        0 |       10 |    39.47 |... 51,52,56,57,58 |
-  UniversityCards.js   |    28.57 |       50 |    14.29 |    30.77 |... 22,36,37,55,61 |
-  countries.js         |      100 |      100 |      100 |      100 |                   |
------------------------|----------|----------|----------|----------|-------------------|
+-------------------------|----------|----------|----------|----------|-------------------|
+File                     |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------------------|----------|----------|----------|----------|-------------------|
+All files                |    44.44 |       50 |    33.33 |    45.45 |                   |
+ src                     |        0 |      100 |        0 |        0 |                   |
+  App.js                 |        0 |      100 |        0 |        0 |                12 |
+  index.js               |        0 |      100 |      100 |        0 |                 6 |
+ src/components          |    27.91 |       50 |    22.22 |    29.27 |                   |
+  ExportJSON.js          |     12.5 |      100 |        0 |     12.5 |    2,3,5,7,8,9,10 |
+  FavoriteButton.js      |      100 |       50 |    33.33 |      100 |                 7 |
+  UniversityCards.js     |    27.27 |       50 |    21.43 |    29.03 |... ,85,86,104,110 |
+ src/components/Favorite |       75 |       50 |       60 |       75 |                   |
+  Favorite.js            |       75 |       50 |       60 |       75 |             17,33 |
+ src/components/Home     |      100 |      100 |      100 |      100 |                   |
+  Home.js                |      100 |      100 |      100 |      100 |                   |
+ src/components/Login    |      100 |      100 |      100 |      100 |                   |
+  Login.js               |      100 |      100 |      100 |      100 |                   |
+ src/components/Navbar   |    83.33 |       50 |       75 |    83.33 |                   |
+  MenuItems.js           |      100 |      100 |      100 |      100 |                   |
+  Navbar.js              |       80 |       50 |       75 |       80 |                21 |
+ src/components/Search   |    51.72 |       50 |       20 |    51.72 |                   |
+  SearchInput.js         |       60 |       50 |       25 |       60 |             16,29 |
+  SearchPage.js          |    47.83 |      100 |    14.29 |    47.83 |... 26,28,32,36,46 |
+  countries.js           |      100 |      100 |      100 |      100 |                   |
+-------------------------|----------|----------|----------|----------|-------------------|
 ```
 
 ### `eslint src/**/*.js --fix`
